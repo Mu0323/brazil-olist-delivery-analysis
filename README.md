@@ -8,8 +8,7 @@
 
 ## 项目入口
 
-- 交互分析页：双击 [`dashboard/index.html`](dashboard/index.html)，无需服务器或网络。
-- GitHub Pages：启用 Pages 后，仓库根目录会自动跳转至交互分析页。
+- 交互分析页：[在线查看](https://mu0323.github.io/brazil-olist-delivery-analysis/)。
 - Tableau Public：[在线打开互动看板](https://public.tableau.com/app/profile/z.whisper/viz/olist-business-dashboard/OLIST?publish=yes)。
 - Tableau 源文件：[`outputs/tableau/olist-business-dashboard.twb`](outputs/tableau/olist-business-dashboard.twb)。
 - 完整分析报告：[`docs/analysis-report.md`](docs/analysis-report.md)。
