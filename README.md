@@ -2,7 +2,7 @@
 
 基于 Olist 巴西电商公开数据构建的端到端数据分析项目。项目将经营概览与问题诊断分开：Tableau 展示订单、区域、品类与客户结构，HTML + ECharts 解释物流延误与客户差评之间的关联，并给出可执行的预警和治理优先级。
 
-> 数据覆盖 2016–2018 年。本项目用于展示多表建模、统计验证和可视化表达方法，结论仅描述该历史样本，不代表当前巴西或中国电商市场水平。
+> 数据覆盖 2016–2018 年。本项目用于展示多表建模、统计验证和可视化表达方法，结论仅描述该历史样本，不代表当前巴西电商市场水平。
 
 ![Tableau 经营看板预览](dashboard/assets/tableau-dashboard.png)
 
@@ -113,7 +113,7 @@ python scripts/08_export_tableau_data.py
 - SciPy / Statsmodels：两比例检验和二项 GLM
 - Matplotlib / Seaborn：探索性分析
 - Tableau：经营概览
-- Apache ECharts / HTML / CSS / JavaScript：交互式分析叙事
+- Apache ECharts / HTML / CSS / JavaScript（AI 辅助）：交互式分析叙事
 
 ## 结论边界
 
