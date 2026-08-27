@@ -1,0 +1,233 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Olist 电商履约与客户体验分析：从延误识别、客户容忍度到品类治理优先级。">
+  <title>Olist · 履约与客户体验分析</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="scroll-progress" aria-hidden="true"><span></span></div>
+
+  <nav class="site-nav" aria-label="主导航">
+    <a class="brand" href="#top" aria-label="返回页面顶部">
+      <span class="brand-mark">O</span>
+      <span>OLIST ANALYTICS</span>
+    </a>
+    <div class="nav-links">
+      <a href="#evidence">核心证据</a>
+      <a href="#threshold">容忍边界</a>
+      <a href="#priority">治理优先级</a>
+      <a href="#tableau">经营看板</a>
+    </div>
+  </nav>
+
+  <header id="top" class="hero">
+    <div class="hero-orb orb-one" aria-hidden="true"></div>
+    <div class="hero-orb orb-two" aria-hidden="true"></div>
+    <div class="hero-copy reveal">
+      <p class="eyebrow"><span>OLIST</span> FULFILLMENT & CUSTOMER EXPERIENCE</p>
+      <h1>当送达承诺落空，<br><em>差评从何时开始？</em></h1>
+      <p class="lede">从近十万笔订单中识别履约风险，验证延误与差评之间的关联，并把结论转化为可执行的预警与治理顺序。</p>
+      <div class="hero-actions">
+        <a class="button primary" href="#evidence">查看分析结论</a>
+        <a class="button ghost" href="#method">了解分析方法</a>
+      </div>
+    </div>
+    <aside class="hero-proof reveal" aria-label="核心分析结论">
+      <p class="proof-label">核心发现</p>
+      <strong><span data-count="44.79" data-decimals="2">44.79</span><small>pp</small></strong>
+      <p>延误订单与未延误订单的差评率差异</p>
+      <div class="proof-rule"></div>
+      <div class="proof-meta">
+        <span>95% CI</span>
+        <b>43.66–45.92 pp</b>
+      </div>
+    </aside>
+    <a class="scroll-cue" href="#context" aria-label="继续向下浏览"><span></span>SCROLL</a>
+  </header>
+
+  <main>
+    <section id="context" class="section context-section">
+      <div class="section-intro reveal">
+        <p class="section-index">01 / CONTEXT</p>
+        <div>
+          <h2>先确认问题规模</h2>
+          <p>延误不是孤立个案。先从订单覆盖、履约漏斗和评价完整度建立分析边界，再进入客户体验判断。</p>
+        </div>
+      </div>
+
+      <div class="metric-grid">
+        <article class="metric-card reveal">
+          <span>已送达订单</span>
+          <strong data-bind="deliveredOrders" data-format="integer">96,476</strong>
+          <small>可计算实际履约结果</small>
+        </article>
+        <article class="metric-card reveal">
+          <span>延误订单</span>
+          <strong data-bind="delayedOrders" data-format="integer">7,827</strong>
+          <small>实际送达晚于承诺时间</small>
+        </article>
+        <article class="metric-card accent reveal">
+          <span>整体延误率</span>
+          <strong><span data-bind="delayRate">8.11</span><i>%</i></strong>
+          <small>基于有实际送达时间的订单</small>
+        </article>
+        <article class="metric-card reveal">
+          <span>评价覆盖率</span>
+          <strong>99.33<i>%</i></strong>
+          <small>体验分析的数据基础充分</small>
+        </article>
+      </div>
+
+      <div class="analysis-grid funnel-layout">
+        <article class="chart-panel reveal">
+          <div class="panel-heading">
+            <div><span>履约过程</span><h3>订单履约阶段保留率</h3></div>
+            <p>创建至送达保留 97.0%；批准后损失 2,805 单，其中批准→发货损失最大（1,623 单）。</p>
+          </div>
+          <div id="funnel-chart" class="chart" role="img" aria-label="订单创建、批准、发货和送达阶段保留率图"></div>
+        </article>
+        <aside class="logic-card reveal">
+          <p class="mini-label">WHY IT MATTERS</p>
+          <h3>评价不是漏斗的下一步</h3>
+          <p>评价可能发生在未完成送达的订单上，因此它被单独作为“客户体验结果”，而不是强行接在履约漏斗之后。</p>
+          <ul class="logic-list">
+            <li><span>履约样本</span><b>有实际送达时间</b></li>
+            <li><span>体验样本</span><b>有评价分数</b></li>
+            <li><span>差评定义</span><b>1–2 分</b></li>
+          </ul>
+        </aside>
+      </div>
+    </section>
+
+    <section id="evidence" class="section section-tint">
+      <div class="section-intro reveal">
+        <p class="section-index">02 / EVIDENCE</p>
+        <div>
+          <h2>延误与差评存在强关联</h2>
+          <p>不只比较平均评分，更直接观察差评率，并用统计模型检验品类、州和订单金额能否解释这种差异。</p>
+        </div>
+      </div>
+
+      <div class="analysis-grid evidence-layout">
+        <article class="chart-panel reveal">
+          <div class="panel-heading compact">
+            <div><span>体验对比</span><h3>未延误 vs 延误</h3></div>
+          </div>
+          <div id="comparison-chart" class="chart large" role="img" aria-label="延误与未延误订单的平均评分和差评率对比"></div>
+        </article>
+        <aside class="evidence-card reveal">
+          <p class="mini-label">ADJUSTED RESULT</p>
+          <h3>控制差异后，关联仍然显著</h3>
+          <div class="odds-number"><span data-count="11.65" data-decimals="2">11.65</span><small>×</small></div>
+          <p>控制品类、客户州与订单金额后，延误订单产生差评的 odds 仍是未延误订单的 11.65 倍。</p>
+          <div class="evidence-stats">
+            <div><span>调整后差评率差异</span><b>43.38 pp</b></div>
+            <div><span>显著性</span><b>p &lt; 0.001</b></div>
+          </div>
+          <small class="caveat">观察性数据支持强关联，但不表述为严格因果。</small>
+        </aside>
+      </div>
+    </section>
+
+    <section id="threshold" class="section">
+      <div class="section-intro reveal">
+        <p class="section-index">03 / THRESHOLD</p>
+        <div>
+          <h2>客户容忍度在第 3 天出现拐点</h2>
+          <p>延误不足一天的影响有限；从 1–2 天进入 3–5 天后，差评率由 25.52% 跃升至 56.66%。</p>
+        </div>
+      </div>
+
+      <article class="chart-panel threshold-panel reveal">
+        <div id="tolerance-chart" class="chart xl" role="img" aria-label="不同延误天数区间的差评率曲线"></div>
+        <div class="threshold-note">
+          <span>候选预警阈值</span>
+          <strong>3 天</strong>
+          <p>在风险陡增前主动沟通，而不是等差评发生后再补救。</p>
+        </div>
+      </article>
+
+      <div class="response-steps reveal">
+        <article><span>01</span><div><b>不足 3 天</b><p>自动更新物流状态与预计到货时间。</p></div></article>
+        <article><span>02</span><div><b>达到 3 天</b><p>主动致歉并进入小额补偿候选队列。</p></div></article>
+        <article><span>03</span><div><b>超过 6 天</b><p>升级人工优先处理，跟踪客户反馈。</p></div></article>
+      </div>
+    </section>
+
+    <section id="priority" class="section section-deep">
+      <div class="section-intro light reveal">
+        <p class="section-index">04 / PRIORITY</p>
+        <div>
+          <h2>治理资源应该先投向哪里？</h2>
+          <p>销售规模大不等于治理价值高。综合 GMV、延误订单量和差评率上升，优先识别高影响品类。</p>
+        </div>
+      </div>
+
+      <div class="priority-layout">
+        <article class="chart-panel dark-panel reveal">
+          <div class="bubble-guide"><span>横轴：商品 GMV</span><span>纵轴：预计额外差评风险</span><span>气泡：延误订单量</span></div>
+          <div id="priority-chart" class="chart xl" role="img" aria-label="品类GMV、延误订单和预计额外差评风险气泡图"></div>
+        </article>
+        <aside class="priority-rank reveal">
+          <p class="mini-label">TOP PRIORITIES</p>
+          <h3>优先治理品类</h3>
+          <ol id="priority-list"></ol>
+          <p class="rank-note">优先级指标用于资源排序，不代表延误严格造成的差评数量。</p>
+        </aside>
+      </div>
+    </section>
+
+    <section id="tableau" class="section tableau-section">
+      <div class="section-intro reveal">
+        <p class="section-index">05 / BUSINESS VIEW</p>
+        <div>
+          <h2>同一个项目，两种分析视角</h2>
+          <p>HTML 解释履约风险与客户体验；Tableau 承担经营概览，展示订单规模、区域、品类与客户结构。</p>
+        </div>
+      </div>
+      <div class="tableau-frame reveal">
+        <div class="frame-bar">
+          <div class="frame-dots" aria-hidden="true"><i></i><i></i><i></i></div>
+          <span>OLIST 电商经营表现概览</span>
+          <a href="https://public.tableau.com/app/profile/z.whisper/viz/olist-business-dashboard/OLIST?publish=yes" target="_blank" rel="noopener">打开互动看板 ↗</a>
+        </div>
+        <div class="tableau-preview">
+          <img src="assets/tableau-dashboard.png" alt="OLIST Tableau 电商经营表现看板预览">
+        </div>
+      </div>
+      <div class="view-split reveal">
+        <div><span>TABLEAU</span><b>经营表现</b><p>回答规模、区域、品类和客户结构。</p></div>
+        <div class="split-arrow">→</div>
+        <div><span>INTERACTIVE STORY</span><b>问题诊断</b><p>回答延误何时影响体验，以及如何治理。</p></div>
+      </div>
+    </section>
+
+    <section id="method" class="section method-section">
+      <div class="method-copy reveal">
+        <p class="section-index">06 / METHOD</p>
+        <h2>分析可信度来自清晰口径</h2>
+        <p>订单、商品、支付与评价存在一对多关系。项目先按订单聚合，再分别建立订单级、订单×品类级分析层，避免 JOIN 放大订单数和 GMV。</p>
+      </div>
+      <div class="method-grid reveal">
+        <article><span>01</span><b>延误</b><p>实际送达时间严格晚于承诺送达时间。</p></article>
+        <article><span>02</span><b>差评</b><p>评价分数小于或等于 2；无评价订单不进入分母。</p></article>
+        <article><span>03</span><b>统计验证</b><p>两比例 Z 检验、95% 置信区间与二项 GLM。</p></article>
+        <article><span>04</span><b>结论边界</b><p>呈现强关联，不把观察性结果写成因果效应。</p></article>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div><b>Olist Fulfillment & Customer Experience</b><span>SQL · Python · Statsmodels · ECharts · Tableau</span></div>
+    <a href="#top">返回顶部 ↑</a>
+  </footer>
+
+  <noscript>请启用 JavaScript 以查看交互图表。</noscript>
+  <script src="echarts.min.js"></script>
+  <script src="data/olist-dashboard-data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+# Python
+.venv/
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+
+# Local databases and raw/derived datasets
+data/raw/*
+!data/raw/.gitkeep
+data/processed/*
+!data/processed/.gitkeep
+outputs/tableau/*.csv
+
+# Temporary and local notes
+tmp/
+notes/
+docs/repository-audit.md
+_local_archive/
+.Rhistory
+
+# Tableau local artifacts
+*.twbr
+*.tfl
+*.tflx
+
+# IDE / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+desktop.ini
